@@ -3,9 +3,11 @@ import tkinter as tk
 from threading import Thread, Event
 import time
 
-/**
-* Classe para realizar testes menores do mouse, como movimentacao entre outros.
-*/
+"""Exemplo simples para manter o ponteiro do mouse em movimento.
+
+Este script usa ``pyautogui`` para mover o mouse periodicamente. Foi criado
+apenas para fins de teste e evita que a tela de descanso seja ativada.
+"""
 class MouseMoverApp:
     def __init__(self, master):
         self.master = master
