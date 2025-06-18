@@ -1,13 +1,37 @@
 # pythonRPA
 
-Este repositório contém utilidades simples de automação usando
-``pyautogui``. Além da aplicação de exemplo ``mouse.py`` foi adicionada a
-classe :class:`AppAutomator` em ``app_automation.py`` que permite:
+Utilitários simples para automação de tarefas de desktop em Python usando `pyautogui` e `pygetwindow`.
 
-* Executar programas do sistema operacional;
-* Localizar janelas através do ``pygetwindow``;
-* Interagir com elementos na tela por reconhecimento de imagem;
-* Enviar comandos de teclado e mouse.
+## Visão Geral
+Este projeto traz a classe `AppAutomator`, definida em `app_automation.py`, que facilita:
+- Executar programas do sistema operacional;
+- Localizar janelas através do `pygetwindow`;
+- Interagir com elementos na tela usando reconhecimento de imagem;
+- Enviar comandos de teclado e mouse.
 
-O uso destas funcionalidades depende do suporte de ``pyautogui`` e
-``pygetwindow`` ao sistema operacional em execução.
+Como exemplo de uso, o script `mouse.py` movimenta o cursor periodicamente para evitar que a tela de descanso seja ativada.
+
+## Requisitos
+- Python 3.8+;
+- `pyautogui`;
+- (Opcional) `pygetwindow` para detecção de janelas.
+
+## Instalação
+Clone o repositório e instale as dependências:
+
+```bash
+pip install pyautogui pygetwindow
+```
+
+## Executando o exemplo
+Para executar a aplicação de demonstração:
+
+```bash
+python mouse.py
+```
+
+## Automacao de aplicativos
+Para integrar o `AppAutomator` ao seu projeto, importe a classe e utilize seus métodos para iniciar e manipular aplicativos.
+
+## Licença
+Consulte o arquivo `LICENSE` para detalhes de licença.
