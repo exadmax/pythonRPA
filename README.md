@@ -33,5 +33,14 @@ python mouse.py
 ## Automacao de aplicativos
 Para integrar o `AppAutomator` ao seu projeto, importe a classe e utilize seus métodos para iniciar e manipular aplicativos.
 
+## Janela de chat com ChatGPT
+O script `chat_window.py` abre uma janela de chat que envia a mensagem digitada
+ao ChatGPT e executa cada linha retornada como um comando do sistema. Defina a
+variável `OPENAI_API_KEY` com sua chave da OpenAI antes de rodar o programa.
+
+```bash
+python chat_window.py
+```
+
 ## Licença
 Consulte o arquivo `LICENSE` para detalhes de licença.
