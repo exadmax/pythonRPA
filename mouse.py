@@ -3,11 +3,17 @@ import tkinter as tk
 from threading import Thread, Event
 import time
 
+# Garantir que movimentos do mouse nao parem por acionamento involuntario do
+# modo "fail-safe" do pyautogui
+pyautogui.FAILSAFE = False
+
 """Exemplo simples para manter o ponteiro do mouse em movimento.
 
 Este script usa ``pyautogui`` para mover o mouse periodicamente. Foi criado
 apenas para fins de teste e evita que a tela de descanso seja ativada.
 """
+
+
 class MouseMoverApp:
     def __init__(self, master):
         self.master = master
@@ -16,13 +22,19 @@ class MouseMoverApp:
 
         self.running = Event()
 
-        self.label = tk.Label(master, text="Iniciar procedimento.", wraplength=250)
+        self.label = tk.Label(
+            master, text="Iniciar procedimento.", wraplength=250
+        )
         self.label.pack(pady=10)
 
-        self.start_button = tk.Button(master, text="Iniciar", command=self.start)
+        self.start_button = tk.Button(
+            master, text="Iniciar", command=self.start
+        )
         self.start_button.pack(pady=5)
 
-        self.stop_button = tk.Button(master, text="Parar", command=self.stop, state=tk.DISABLED)
+        self.stop_button = tk.Button(
+            master, text="Parar", command=self.stop, state=tk.DISABLED
+        )
         self.stop_button.pack(pady=5)
 
         self.quit_button = tk.Button(master, text="Fechar", command=self.close)
@@ -31,8 +43,8 @@ class MouseMoverApp:
     def move_mouse(self):
         while self.running.is_set():
             x, y = pyautogui.position()
-            pyautogui.moveTo(x + 1, y + 1)  # Move 1 pixel para não gerar desconforto
-            pyautogui.moveTo(x, y)
+            pyautogui.moveRel(1, 1)  # Move 1 pixel para nao gerar desconforto
+            pyautogui.moveRel(-1, -1)
             time.sleep(10)
 
     def start(self):
